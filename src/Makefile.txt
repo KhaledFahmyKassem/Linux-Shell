@@ -1,0 +1,11 @@
+
+CC=gcc
+CFLAGS=-I.
+DEPS = commands.h 
+OBJ = shell_project.o commands.o file.o 
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+hellomake: $(OBJ)
+	gcc -o $@ $^ $(CFLAGS)
